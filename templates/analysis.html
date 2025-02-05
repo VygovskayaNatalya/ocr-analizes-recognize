@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результаты анализов</title>
+    <style>
+        .table-container {
+            margin: 20px auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h2>Структурированные результаты анализов</h2>
+        <div id="analysisTable"></div>
+    </div>
+   
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tableData = localStorage.getItem("analysisTable");
+            console.log("Loading table data:", tableData);
+            if (tableData) {
+                document.getElementById("analysisTable").innerHTML = tableData;
+            }
+        });
+    </script>
+</body>
+</html>
